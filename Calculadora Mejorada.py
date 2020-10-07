@@ -22,43 +22,30 @@ while True:
 
     if area == 1:
 
-        coste=float(input("Por favor, introduce un coste: "))
-    
         margen=1.68
-    
-        iva=int(input("Por favor, introduce el IVA: "))
-
-        precio_venta=calculadora
-
-        print("El precio de venta en Supermercado es:",precio_venta(coste,margen,iva),"€")
-        print("El precio de venta en Tienda Online es:",round((precio_venta(coste,margen,iva))*1.04,2),"€\n")
 
     elif area == 2:
 
-        coste=float(input("Por favor, introduce un coste: "))
     
         margen=1.45
     
-        iva=int(input("Por favor, introduce el IVA: "))
-
-        precio_venta=calculadora
-
-        print("El precio de venta en Supermercado es:",precio_venta(coste,margen,iva),"€")
-        print("El precio de venta en Tienda Online es:",round((precio_venta(coste,margen,iva))*1.04,2),"€\n")
-
     elif area == 3:
 
-        coste=float(input("Por favor, introduce un coste: "))
-    
         margen=1.52
     
-        iva=int(input("Por favor, introduce el IVA: "))
-
-        precio_venta=calculadora
-
-        print("El precio de venta en Supermercado es:",precio_venta(coste,margen,iva),"€")
-        print("El precio de venta en Tienda Online es:",round((precio_venta(coste,margen,iva))*1.04,2),"€\n")
-
     elif area == 0:
     
         break
+
+    
+    #Solicitamos los datos
+    coste=float(input("Por favor, introduce un coste: "))
+
+    iva=int(input("Por favor, introduce el IVA: "))
+
+    #Realizamos las operaciones
+    precio_venta=calculadora(coste,margen,iva)
+
+    #Visualizamos el resultado
+    print("El precio de venta en Supermercado es:",precio_venta(coste,margen,iva),"€")
+    print("El precio de venta en Tienda Online es:",round((precio_venta(coste,margen,iva))*1.04,2),"€\n")
