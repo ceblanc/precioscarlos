@@ -1,6 +1,6 @@
-#Falta por mejorar:
-#-Poder elegir área cada vez
-#-Salir del programa introduciendo "0"
+import os
+def clear(): os.system('clear') #on Linux System
+#def clear(): os.system('cls') #on Windows System
 
 margen=[1.68,1.45,1.52]
 
@@ -13,6 +13,7 @@ def calculadora(coste,margen,iva):
 while True:
 
     #Sustituir "Escribe 0 para salir del programa" por "Escribe 0 en cualquier momento para salir del programa"
+    print("\n")
     print("Calculadora Espacio Orgánico\n")
     area=int(input("""Selecciona una opción:
     - Frutería 1
@@ -24,8 +25,12 @@ while True:
     if area == 0:
         break
     elif area <0 or area > 3:
+        clear()
+
         print ("ERROR: la selección elegida no es correcta, por favor, elige una de las disponbiles")
     else:
+        clear()
+
         #Solicitamos los datos
         coste=float(input("Por favor, introduce un coste: "))
 
