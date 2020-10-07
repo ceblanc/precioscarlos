@@ -17,18 +17,19 @@ def calcula_precio(datos, margen):
         
     return resultado
 
+if __name__ == "__main__":
 
-margenes=[1.45,1.52,1.68]
+    margenes=[1.45,1.52,1.68]
 
-area_selecionada=int(input("Selecciona un área:\n""\n"
-               "1.Supermercado: \n"
-               "2.Herbolario: \n"
-               "3.Frutería: \n""\n"
-               "Selecciona 0 para salir del programa""\n""\n"
-               "Selección: "))
+    area_selecionada=int(input("Selecciona un área:\n""\n"
+                "1.Supermercado: \n"
+                "2.Herbolario: \n"
+                "3.Frutería: \n""\n"
+                "Selecciona 0 para salir del programa""\n""\n"
+                "Selección: "))
 
 
-precio=obtener_datos()
+    precio=obtener_datos()
 
-print("El precio en punto de venta es: ",(round(calcula_precio(precio,margenes[area_selecionada]),2)))
-print("El precio en punto de venta es: ",(round(calcula_precio(precio,margen[area_selecionada])*1.04,2)))
+    print("El precio en punto de venta es: ",(round(calcula_precio(precio,margenes[area_selecionada]),2)))
+    print("El precio en punto de venta es: ",(round(calcula_precio(precio,margenes[area_selecionada])*1.04,2)))
