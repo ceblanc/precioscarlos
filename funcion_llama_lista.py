@@ -1,12 +1,3 @@
-margenes=[1.45,1.52,1.68]
-
-area_selecionada=int(input("Selecciona un área:\n""\n"
-               "1.Supermercado: \n"
-               "2.Herbolario: \n"
-               "3.Frutería: \n""\n"
-               "Selecciona 0 para salir del programa""\n""\n"
-               "Selección: "))
-
 def obtener_datos():
 
     datos=[]
@@ -19,27 +10,25 @@ def obtener_datos():
 
     return datos
 
-def operacion(datos, area):
 
-    if area==1:
+def calcula_precio(datos, margen):
 
-        resultado=datos[0]*margenes[0]+(datos[0]*datos[1]/100)
+    resultado=datos[0]*margen+(datos[0]*datos[1]/100)
         
-        return resultado
+    return resultado
 
-    elif area==2:
 
-        resultado=datos[0]*margenes[1]+(datos[0]*datos[1]/100)
-        
-        return resultado
-    
-    elif area==3:
+margenes=[1.45,1.52,1.68]
 
-        resultado=datos[0]*margenes[2]+(datos[0]*datos[1]/100)
-        
-        return resultado
+area_selecionada=int(input("Selecciona un área:\n""\n"
+               "1.Supermercado: \n"
+               "2.Herbolario: \n"
+               "3.Frutería: \n""\n"
+               "Selecciona 0 para salir del programa""\n""\n"
+               "Selección: "))
+
 
 precio=obtener_datos()
 
-print("El precio en punto de venta es: ",(round(operacion(precio,area_selecionada),2)))
-print("El precio en punto de venta es: ",(round(operacion(precio,area_selecionada)*1.04,2)))
+print("El precio en punto de venta es: ",(round(calcula_precio(precio,margenes[area_selecionada]),2)))
+print("El precio en punto de venta es: ",(round(calcula_precio(precio,margen[area_selecionada])*1.04,2)))
