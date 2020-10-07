@@ -2,15 +2,7 @@
 #-Poder elegir área cada vez
 #-Salir del programa introduciendo "0"
 
-
-#Sustituir "Escribe 0 para salir del programa" por "Escribe 0 en cualquier momento para salir del programa"
-print("Calculadora Espacio Orgánico\n")
-area=int(input("""Selecciona una opción:
-- Frutería 1
-- Supermercado 2
-- Herbolario 3\n\n
-Escribe 0 para salir del programa
-Opción: """))
+margen=[1.68,1.45,1.52]
 
 def calculadora(coste,margen,iva):
     
@@ -20,32 +12,28 @@ def calculadora(coste,margen,iva):
     
 while True:
 
-    if area == 1:
+    #Sustituir "Escribe 0 para salir del programa" por "Escribe 0 en cualquier momento para salir del programa"
+    print("Calculadora Espacio Orgánico\n")
+    area=int(input("""Selecciona una opción:
+    - Frutería 1
+    - Supermercado 2
+    - Herbolario 3\n\n
+    Escribe 0 para salir del programa
+    Opción: """))
 
-        margen=1.68
-
-    elif area == 2:
-
-    
-        margen=1.45
-    
-    elif area == 3:
-
-        margen=1.52
-    
-    elif area == 0:
-    
+    if area == 0:
         break
+    elif area <0 or area > 3:
+        print ("ERROR: la selección elegida no es correcta, por favor, elige una de las disponbiles")
+    else:
+        #Solicitamos los datos
+        coste=float(input("Por favor, introduce un coste: "))
 
-    
-    #Solicitamos los datos
-    coste=float(input("Por favor, introduce un coste: "))
+        iva=int(input("Por favor, introduce el IVA: "))
 
-    iva=int(input("Por favor, introduce el IVA: "))
+        #Realizamos las operaciones
+        precio_venta=calculadora(coste,margen,iva)
 
-    #Realizamos las operaciones
-    precio_venta=calculadora(coste,margen,iva)
-
-    #Visualizamos el resultado
-    print("El precio de venta en Supermercado es:",precio_venta(coste,margen,iva),"€")
-    print("El precio de venta en Tienda Online es:",round((precio_venta(coste,margen,iva))*1.04,2),"€\n")
+        #Visualizamos el resultado
+        print("El precio de venta en Supermercado es:",precio_venta(coste,margen[area+1],iva),"€")
+        print("El precio de venta en Tienda Online es:",round((precio_venta(coste,margen[area+1],iva))*1.04,2),"€\n")
